@@ -1,14 +1,13 @@
 import React from 'react';
-
+import Person from './Person/Person'
 
 class App extends React.Component {
   render() {
     return (
-      // <div>
-      //   Hello
-      // </div>
-
-      React.createElement('div', null, React.createElement('h1', null, 'Does this work?'))
+      <div>
+        Hello
+        <Person />
+      </div>
     );
   }
 }
