@@ -48,7 +48,7 @@ const app = props => {
   return (
     <div>
       <button
-        onClick={switchNameHandler.bind(this, 'Maximilian')}
+        onClick={() => switchNameHandler('Maximilian!!')}
       >Switch name
         </button>
       <Person
