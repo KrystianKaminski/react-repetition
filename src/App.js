@@ -62,14 +62,29 @@ const app = props => {
 
   const [otherState, setOtherState] = useState('some other value')
 
-  console.log(personsState, otherState)
+  const style = {
+    container: {
+      position: 'relative'
+    },
+    button: {
+      position: 'absolute',
+      backgroundColor: 'white',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor: 'pointer',
+    },
+  }
 
   return (
     <div>
-      <button
-        onClick={() => switchNameHandler('Maximilian!!')}
-      >Switch name
+      <div>
+        <button
+          style={style.button}
+          onClick={() => switchNameHandler('Maximilian!!')}
+        >Switch name
         </button>
+      </div>
       <Person
         name={personsState.persons[0].name}
         age={personsState.persons[0].age}
