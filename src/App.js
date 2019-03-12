@@ -21,12 +21,12 @@ const app = props => {
   })
 
 
-  const switchNameHandler = () => {
+  const switchNameHandler = (newName) => {
     //console.log('Was clicked!')
     setPersonsState({
       persons: [
         {
-          name: 'Maximilian',
+          name: newName,
           age: 28
         },
         {
@@ -48,7 +48,7 @@ const app = props => {
   return (
     <div>
       <button
-        onClick={switchNameHandler}
+        onClick={switchNameHandler.bind(this, 'Maximilian')}
       >Switch name
         </button>
       <Person
@@ -58,7 +58,7 @@ const app = props => {
       <Person
         name={personsState.persons[1].name}
         age={personsState.persons[1].age}
-        click={switchNameHandler}
+        click={switchNameHandler.bind(this, 'Max!')}
       >
         My Hobbies: Racing
         </Person>
