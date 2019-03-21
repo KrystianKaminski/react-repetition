@@ -13,7 +13,8 @@ class App extends React.Component {
   }
 
   deletePersonHandler = (personIndex) => {
-    const persons = this.state.persons.slice()
+    //const persons = this.state.persons.slice()
+    const persons = [...this.state.persons]
     persons.splice(personIndex, 1)
     this.setState({ persons: persons })
   }
@@ -52,6 +53,7 @@ class App extends React.Component {
               click={() => this.deletePersonHandler(index)}
               name={person.name}
               age={person.age}
+              key={index}
             />
           })}
         </div>
