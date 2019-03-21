@@ -31,8 +31,12 @@ class App extends React.Component {
       ]
     })
   }
-  render() {
 
+  togglePersonsHandler = () => {
+
+  }
+
+  render() {
     const style = {
       backgroundColor: 'white',
       font: 'inherit',
@@ -47,24 +51,28 @@ class App extends React.Component {
         <p>This is really working!</p>
         <button
           style={style}
-          onClick={() => this.switchNameHandler('Maximilian!!')}
+          onClick={this.togglePersonsHandler}
         >Switch name
         </button>
-        <Person
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age}
-        />
-        <Person
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-          click={this.switchNameHandler.bind(this, 'Max!')}
-          changed={this.nameChangedHander}
-        > My hobbies: racing
+        {this.state.showPersons ?
+          <div>
+            <Person
+              name={this.state.persons[0].name}
+              age={this.state.persons[0].age}
+            />
+            <Person
+              name={this.state.persons[1].name}
+              age={this.state.persons[1].age}
+              click={this.switchNameHandler.bind(this, 'Max!')}
+              changed={this.nameChangedHander}
+            > My hobbies: racing
         </Person>
-        <Person
-          name={this.state.persons[2].name}
-          age={this.state.persons[2].age}
-        />
+            <Person
+              name={this.state.persons[2].name}
+              age={this.state.persons[2].age}
+            />
+          </div> : null
+        }
       </div>
     )
   }
