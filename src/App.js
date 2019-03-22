@@ -19,8 +19,8 @@ class App extends React.Component {
     this.setState({ persons: persons })
   }
 
-  nameChangedHander = (event, id) => {
-    const personIndex = this.state.person.find(p => {
+  nameChangedHandler = (event, id) => {
+    const personIndex = this.state.persons.findIndex(p => {
       return p.id === id
     })
 
@@ -65,7 +65,7 @@ class App extends React.Component {
               name={person.name}
               age={person.age}
               key={person.id}
-              changed={(event) => this.nameChangedHander(event, person.id)}
+              changed={(event) => this.nameChangedHandler(event, person.id)}
             />
           })}
         </div>
