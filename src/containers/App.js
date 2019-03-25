@@ -16,6 +16,11 @@ class App extends React.Component {
     showCockpit: true
   }
 
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log('[App.js] shouldComponentUpdate')
+  //   return true
+  // }
+
   deletePersonHandler = (personIndex) => {
     //const persons = this.state.persons.slice()
     const persons = [...this.state.persons]
