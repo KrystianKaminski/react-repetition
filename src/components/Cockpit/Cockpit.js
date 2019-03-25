@@ -52,6 +52,11 @@ const Cockpit = props => {
                 onClick={props.clicked}
             >Switch Person components
             </button>
+            <button
+                onClick={props.login}
+            >
+                Log in
+            </button>
         </div>
     )
 }

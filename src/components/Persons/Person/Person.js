@@ -6,6 +6,7 @@ const Person = (props) => {
         <div
             className={classes.Person}
         >
+            {props.isAuth ? <p>Authentiicated!</p> : <p>Please log in!</p>}
             <p
                 onClick={props.click}
             >
