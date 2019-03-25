@@ -5,11 +5,6 @@ import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props)
-    console.log('[App.js] constructor')
-  }
-
   state = {
     persons: [
       { id: 'adasda', name: 'Max', age: 28 },
@@ -18,19 +13,6 @@ class App extends React.Component {
     ],
     otherState: 'some other value',
     showPersons: false
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    console.log('[App.js] getDerivedStateFromProps', props)
-    return state
-  }
-
-  componentWillMount() {
-    console.log('[App.js] componentWillMount')
-  }
-
-  componentDidMount() {
-    console.log('[App.js] componentDidMount')
   }
 
   deletePersonHandler = (personIndex) => {
@@ -67,7 +49,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('[App.js] render')
     let persons = null
 
     if (this.state.showPersons) {
