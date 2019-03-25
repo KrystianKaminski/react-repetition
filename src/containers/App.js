@@ -16,10 +16,6 @@ class App extends React.Component {
     showCockpit: true
   }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   console.log('[App.js] shouldComponentUpdate')
-  //   return true
-  // }
 
   deletePersonHandler = (personIndex) => {
     //const persons = this.state.persons.slice()
@@ -83,7 +79,7 @@ class App extends React.Component {
           <Cockpit
             title={this.props.appTitle}
             showPersons={this.state.showPersons}
-            persons={this.state.persons}
+            personsLength={this.state.persons.length}
             clicked={this.togglePersonsHandler}
           />
         ) : null}
