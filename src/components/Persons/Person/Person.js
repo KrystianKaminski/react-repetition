@@ -3,14 +3,23 @@ import classes from './Person.module.css'
 import AuthContext from '../../../context/auth-context'
 
 class Person extends React.Component {
+
+    constructor(props) {
+        super(props)
+    }
+
+    static contextType = AuthContext
+
+    componentDidMount() {
+        console.log(this.context.authenticated)
+    }
+
     render() {
         return (
             <div
                 className={classes.Person}
             >
-                <AuthContext.Consumer>
-                    {(context) => context.authenticated ? <p>Authentiicated!</p> : <p>Please log in!</p>}
-                </AuthContext.Consumer>
+                {this.context.authenticated ? <p>Authentiicated!</p> : <p>Please log in!</p>}
                 <p
                     onClick={this.props.click}
                 >
